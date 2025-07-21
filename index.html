@@ -100,7 +100,8 @@
     async function setMood() {
         let mood = document.getElementById("mood").value;
         await MoodContract.setMood(mood);
-        alert("Mood set to: " + mood);
+        setMoodPromise = MoodContract.setMood();
+        await setMoodPromise;
     }
 
 </script>
